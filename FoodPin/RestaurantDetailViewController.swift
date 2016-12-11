@@ -94,20 +94,21 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Configure the cell...
         switch indexPath.row {
         case 0:
-            cell.fieldLabel.text = "Name"
+            cell.fieldLabel.text = NSLocalizedString("Name", comment: "Name Field")
             cell.valueLabel.text = restaurant.name
         case 1:
-            cell.fieldLabel.text = "Type"
+            cell.fieldLabel.text = NSLocalizedString("Type", comment: "Type Field")
             cell.valueLabel.text = restaurant.type
         case 2:
-            cell.fieldLabel.text = "Location"
+            cell.fieldLabel.text = NSLocalizedString("Location", comment:
+                "Location/Address Field")
             cell.valueLabel.text = restaurant.location
         case 3:
-            cell.fieldLabel.text = "Phone"
+            cell.fieldLabel.text = NSLocalizedString("Phone", comment: "Phone Field")
             cell.valueLabel.text = restaurant.phone
         case 4:
-            cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating!)" : "No"
+            cell.fieldLabel.text = NSLocalizedString("Been here", comment: "Have you been here Field")
+            cell.valueLabel.text = (restaurant.isVisited) ? NSLocalizedString("Yes, I've been here before. \(restaurant.rating!)", comment: "Yes, I've been here before") : NSLocalizedString("No", comment: "No, I haven't been here")
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
