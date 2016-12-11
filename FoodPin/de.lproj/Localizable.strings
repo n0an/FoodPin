@@ -1,0 +1,21 @@
+/* Have you been here Field */
+"Been here" = "Wir haben hier gewesen";
+
+/* Location/Address Field */
+"Location" = "Ort";
+
+/* Name Field */
+"Name" = "Name";
+
+/* No, I haven't been here */
+"No" = "Nein";
+
+/* Phone Field */
+"Phone" = "Telefon";
+
+/* Type Field */
+"Type" = "Type";
+
+/* Yes, I've been here before */
+"Yes, I've been here before. (restaurant.rating!)" = "Ja, ich war schon einmal hier. (restaurant.rating!)";
+

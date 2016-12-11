@@ -1,0 +1,21 @@
+/* Have you been here Field */
+"Been here" = "Вы тут были";
+
+/* Location/Address Field */
+"Location" = "Локация";
+
+/* Name Field */
+"Name" = "Название";
+
+/* No, I haven't been here */
+"No" = "Нет";
+
+/* Phone Field */
+"Phone" = "Номер телефона";
+
+/* Type Field */
+"Type" = "Тип";
+
+/* Yes, I've been here before */
+"Yes, I've been here before. (restaurant.rating!)" = "Да я тут был ранее";
+

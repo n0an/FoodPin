@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		18048F7B1DFD6EF600643242 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18048F7A1DFD6EF600643242 /* CloudKit.framework */; };
 		18048F7D1DFD72A600643242 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18048F7C1DFD72A600643242 /* DiscoverTableViewController.swift */; };
+		18E637781DFDB9690077789A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18E6377A1DFDB9690077789A /* InfoPlist.strings */; };
+		18E6377D1DFDB9690077789A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18E6377F1DFDB9690077789A /* Localizable.strings */; };
+		18E6378B1DFDBCDA0077789A /* aboutfoodpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E6378D1DFDBCDA0077789A /* aboutfoodpin.png */; };
 		F405E4C81D5C09500042A934 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F405E4C71D5C09500042A934 /* MapKit.framework */; };
 		F405E4CA1D5C6EB20042A934 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405E4C91D5C6EB20042A934 /* MapViewController.swift */; };
 		F4177B581D586F3700822293 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4177B571D586F3700822293 /* ReviewViewController.swift */; };
@@ -35,6 +38,19 @@
 		18048F791DFD6EED00643242 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
 		18048F7A1DFD6EF600643242 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		18048F7C1DFD72A600643242 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		18E637791DFDB9690077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18E6377E1DFDB9690077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18E637801DFDB9690077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		18E637811DFDB9690077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18E637821DFDB96A0077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/about.strings; sourceTree = "<group>"; };
+		18E637831DFDB97A0077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18E637841DFDB97B0077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18E637851DFDB97B0077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		18E637861DFDB97B0077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18E637871DFDB97B0077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/about.strings; sourceTree = "<group>"; };
+		18E6378C1DFDBCDA0077789A /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		18E6378E1DFDBD010077789A /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		18E6378F1DFDBD020077789A /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
 		F405E4C71D5C09500042A934 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F405E4C91D5C6EB20042A934 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F4177B571D586F3700822293 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +163,14 @@
 			name = "About Tab";
 			sourceTree = "<group>";
 		};
+		18E637881DFDBCB50077789A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				18E6378D1DFDBCDA0077789A /* aboutfoodpin.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		F405E4C61D5C09500042A934 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +200,9 @@
 		F4D336C01D2E4309003010DD /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				18E637881DFDBCB50077789A /* Images */,
+				18E6377F1DFDB9690077789A /* Localizable.strings */,
+				18E6377A1DFDB9690077789A /* InfoPlist.strings */,
 				18048F791DFD6EED00643242 /* FoodPin.entitlements */,
 				F4D336C11D2E4309003010DD /* AppDelegate.swift */,
 				18048F7E1DFDA02300643242 /* Storyboards */,
@@ -246,6 +273,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				ru,
 			);
 			mainGroup = F4D336B51D2E4309003010DD;
 			productRefGroup = F4D336BF1D2E4309003010DD /* Products */;
@@ -263,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4D336CC1D2E4309003010DD /* LaunchScreen.storyboard in Resources */,
+				18E637781DFDB9690077789A /* InfoPlist.strings in Resources */,
 				F4D336C91D2E4309003010DD /* Assets.xcassets in Resources */,
+				18E6377D1DFDB9690077789A /* Localizable.strings in Resources */,
 				F468FE9F1D66DAEA00263083 /* discover.storyboard in Resources */,
+				18E6378B1DFDBCDA0077789A /* aboutfoodpin.png in Resources */,
 				F468FE9D1D66D8E800263083 /* about.storyboard in Resources */,
 				F4D336C71D2E4309003010DD /* Main.storyboard in Resources */,
 			);
@@ -298,10 +330,40 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		18E6377A1DFDB9690077789A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18E637791DFDB9690077789A /* de */,
+				18E637831DFDB97A0077789A /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18E6377F1DFDB9690077789A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18E6377E1DFDB9690077789A /* de */,
+				18E637841DFDB97B0077789A /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		18E6378D1DFDBCDA0077789A /* aboutfoodpin.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18E6378C1DFDBCDA0077789A /* Base */,
+				18E6378E1DFDBD010077789A /* de */,
+				18E6378F1DFDBD020077789A /* ru */,
+			);
+			name = aboutfoodpin.png;
+			sourceTree = "<group>";
+		};
 		F468FE9B1D66D8E800263083 /* about.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F468FE9C1D66D8E800263083 /* Base */,
+				18E637821DFDB96A0077789A /* de */,
+				18E637871DFDB97B0077789A /* ru */,
 			);
 			name = about.storyboard;
 			sourceTree = "<group>";
@@ -310,6 +372,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4D336C61D2E4309003010DD /* Base */,
+				18E637801DFDB9690077789A /* de */,
+				18E637851DFDB97B0077789A /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -318,6 +382,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4D336CB1D2E4309003010DD /* Base */,
+				18E637811DFDB9690077789A /* de */,
+				18E637861DFDB97B0077789A /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
