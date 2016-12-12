@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UIViewControllerPreviewingDelegate {
 
@@ -64,6 +65,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
         }
         
+        prepareNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,10 +87,67 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - USER NOTIFICATIONS
+    
+    func prepareNotifications() {
+        
+        // Make sure the restaurant array is not empy
+        if restaurants.isEmpty {
+            return
+        }
+        
+        // Pick a restaurant randomly
+        let randomNum = Int(arc4random_uniform(UInt32(restaurants.count)))
+        let suggestedRestaurant = restaurants[randomNum]
+        
+        // Create the user notification
+        let content = UNMutableNotificationContent()
+        content.title = "Restaurant Recommendation"
+        content.subtitle = "Try new food today"
+        content.body = "I recommend you to check out \(suggestedRestaurant.name!). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location!). Would you like to give it a try?"
+        content.sound = UNNotificationSound.default()
+        
+        // Passing phone number with userInfo object
+        
+        content.userInfo = ["phone": suggestedRestaurant.phone!]
+        
+        // Creating Image attachment
+        
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
+        
+        if let image = UIImage(data: suggestedRestaurant.image! as Data) {
+            
+            try? UIImageJPEGRepresentation(image, 1.0)?.write(to: tempFileURL)
+            
+            if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage", url: tempFileURL, options: nil) {
+                content.attachments = [restaurantImage]
+            }
+        }
+        
+        
+        // Creating custom actions - Reserve table, Later
+        let categoryIdentifier = "foodpin.restaurantaction"
+        
+        let makeReservationAction = UNNotificationAction(identifier: "foodpin.makeReservation", title: "Reserve a table", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "foodpin.cancel", title: "Later", options: [])
+        
+        let category = UNNotificationCategory(identifier: categoryIdentifier, actions: [makeReservationAction, cancelAction], intentIdentifiers: [], options: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        content.categoryIdentifier = categoryIdentifier
+        
+        
+        // Creating Trigger
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: content, trigger: trigger)
+        
+        // Schedule the notification
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
+    
+    
 
     // MARK: - Table view data source
 

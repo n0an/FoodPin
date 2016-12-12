@@ -8,10 +8,10 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     
     enum QuickAction: String {
         case OpenFavorites = "OpenFavorites"
@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             self.init(rawValue: shortcutIdentifier)
         }
-        
-        
     }
 
     var window: UIWindow?
@@ -50,6 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Uncomment the following lines to display an indicator image
 //        UITabBar.appearance().tintColor = UIColor.white
 //        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
+        
+        
+        // Register Notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+            
+            if granted {
+                print("===NAG=== User notifications are allowed")
+            } else {
+                print("===NAG=== User notifications are NOT allowed")
+            }
+        })
+        UNUserNotificationCenter.current().delegate = self
+        
         
         return true
     }
@@ -160,4 +171,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+
+
+// MARK: - UNUserNotificationCenterDelegate
+// Calling to phone number
+
+// ===TOUSE===
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.actionIdentifier == "foodpin.makeReservation" {
+            print("===NAG=== Make Reservation")
+            
+            if let phone = response.notification.request.content.userInfo["phone"] {
+                
+                let telURL = "tel://\(phone)"
+                
+                if let url = URL(string: telURL) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        print("===NAG=== Calling \(telURL)")
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+        }
+        
+        completionHandler()
+    }
+    
+    
+    
+    
+}
+
+
+
+
 
