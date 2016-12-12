@@ -108,7 +108,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = NSLocalizedString("Been here", comment: "Have you been here Field")
-            cell.valueLabel.text = (restaurant.isVisited) ? NSLocalizedString("Yes, I've been here before. \(restaurant.rating!)", comment: "Yes, I've been here before") : NSLocalizedString("No", comment: "No, I haven't been here")
+            cell.valueLabel.text = (restaurant.isVisited) ? NSLocalizedString("Yes, I've been here before. \(restaurant.rating)", comment: "Yes, I've been here before") : NSLocalizedString("No", comment: "No, I haven't been here")
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
